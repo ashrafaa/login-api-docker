@@ -1,0 +1,20 @@
+<div class="container" id="login-form">
+  <form [formGroup]="userForm">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="email" id="username" class="form-control" formControlName="username" autocomplete="on" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control" formControlName="password" autocomplete="on" placeholder="Password">
+    </div>
+    <div *ngIf="showError" class="alert alert-danger" role="alert">
+      {{ errorMsg }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseError()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <button type="reset" class="btn btn-primary" (click)="onReset()">Reset</button>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()" style="margin-left: 10px;">Submit</button>
+  </form>
+</div>
